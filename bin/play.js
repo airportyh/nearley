@@ -18,13 +18,18 @@ function cssColor() {
 }
 
 function json() {
-    const grammar = require("../examples/js/json.js");
+    const grammar = require("../examples/json2.js");
     const parser = new nearley.Parser(
         nearley.Grammar.fromCompiled(grammar),
         { keepHistory: false }
     );
     try {
-        const code = `[,]`;
+        let code = `[
+            {
+                "name": "Kate"
+                "age": 9
+            }
+        ]`;
         parser.feed(code);
         console.log("results", parser.results);
     } catch (e) {
