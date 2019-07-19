@@ -24,7 +24,7 @@ function json() {
         { keepHistory: false }
     );
     try {
-        const code = `[abc]`;
+        const code = `[,]`;
         parser.feed(code);
         console.log("results", parser.results);
     } catch (e) {
